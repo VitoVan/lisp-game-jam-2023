@@ -1,6 +1,8 @@
 
 ## Development Log
 
+This is my development log for [Spring Lisp Game Jam 2023](https://itch.io/jam/spring-lisp-game-jam-2023), I started my work a bit late, but maybe I can finally make it.
+
 ### Day 2
 
 5 days left.
@@ -42,23 +44,7 @@ The story of this game should be told like this:
 
 > It was getting dark and darker, some kitties were lost in a maze, how many of them can you save before the sunset? Or, do you have the ability to "see" in the dark? Give it a try.
 
-![maze](README.assets/d2-maze-1.png)
-
-![maze](README.assets/d2-maze-2.png)
-
-![maze](README.assets/d2-maze-3.png)
-
-![maze](README.assets/d2-maze-4.png)
-
-![maze](README.assets/d2-maze-5.png)
-
-![maze](README.assets/d2-maze-6.png)
-
-![maze](README.assets/d2-maze-7.png)
-
-![maze](README.assets/d2-maze-8.png)
-
-![maze](README.assets/d2-maze-9.png)
+![maze](README.assets/d2-maze-1.png)![maze](README.assets/d2-maze-2.png)![maze](README.assets/d2-maze-3.png)![maze](README.assets/d2-maze-4.png)![maze](README.assets/d2-maze-5.png)![maze](README.assets/d2-maze-6.png)![maze](README.assets/d2-maze-7.png)![maze](README.assets/d2-maze-8.png)![maze](README.assets/d2-maze-9.png)
 
 There is no limit of rounds, the player could try as many times as the player wants, but the surrounding light will be dimmer and dimmer, at last it will turn into complete darkness.
 
@@ -104,13 +90,7 @@ Then I write my own version, and rendered it with [CALM](https://github.com/Vito
 
 This seems promising, but:
 
-![maze](README.assets/d1-maze-2.png)
-
-![maze](README.assets/d1-maze-3.png)
-
-
-
-![maze](README.assets/d1-maze-4.png)
+![maze](README.assets/d1-maze-2.png)![maze](README.assets/d1-maze-3.png)![maze](README.assets/d1-maze-4.png)
 
 Sometimes it generates unreasonable maze. 
 
