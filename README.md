@@ -83,3 +83,39 @@ I need to finish the prototype:
 - position
 
   the initial position of Pupu and the player should be placed meticulously, not randomly.
+
+#### Abandon
+
+The above plan was abandoned, the game was redesigned.
+
+Because the cat food and shit parts makes me feel trivial and uninteresting to implement. They feel like some hard-coded features, may take a lot of time to implement and debug, so I left them.
+
+The story of this game should be told like this:
+
+> It was getting dark and darker, some kitties were lost in a maze, how many of them can you save before the sunset? Or, do you have the ability to "see" in the dark? Give it a try.
+
+![maze](README.assets/d2-maze-1.png)
+
+![maze](README.assets/d2-maze-2.png)
+
+![maze](README.assets/d2-maze-3.png)
+
+![maze](README.assets/d2-maze-4.png)
+
+![maze](README.assets/d2-maze-5.png)
+
+![maze](README.assets/d2-maze-6.png)
+
+![maze](README.assets/d2-maze-7.png)
+
+![maze](README.assets/d2-maze-8.png)
+
+![maze](README.assets/d2-maze-9.png)
+
+There is no limit of rounds, the player could try as many times as the player wants, but the surrounding light will be dimmer and dimmer, at last it will turn into complete darkness.
+
+Can a player play in the darkness?
+
+I think it's possible if the kitty could meow and there are sound effects when the player hits the wall or walks through the maze.
+
+Let's leave them tomorrow.
