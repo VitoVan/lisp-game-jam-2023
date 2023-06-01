@@ -3,6 +3,33 @@
 
 This is my development log for [Spring Lisp Game Jam 2023](https://itch.io/jam/spring-lisp-game-jam-2023), I started my work a bit late, but maybe I can finally make it.
 
+### Day 3
+
+4 days left, actually, it's 3 days 20 hours left.
+
+Sound effects added:
+
+1. Kitty will meow, the closer you get, the louder the meow is
+2. Walk will generate walking sound, if you hit the wall, there will be no sound
+3. When you collected the kitty, there will be a special meow
+4. When you successfully lead the kitty out of the maze, there will be purring.
+
+Now kitty will follow the player, if they have met each other (overlapped), and some other small improvement on the avatars.
+
+![d3-maze-1](README.assets/d3-maze-1.png)![d3-maze-2](README.assets/d3-maze-2.png)![d3-maze-3](README.assets/d3-maze-3.png)![d3-maze-4](README.assets/d3-maze-4.png)![d3-maze-5](README.assets/d3-maze-5.png)![d3-maze-6](README.assets/d3-maze-6.png)
+
+Now, added dark mode, even in complete darkness, the game is also playable:
+
+![d3-maze-dark](README.assets/d3-maze-dark-1.png) ![d3-maze-dark-2](README.assets/d4-maze-dark-2.png)
+
+But it's far more difficult.
+
+And the day can turn into night, the night can turn into day.
+
+I should call it a day, tomorrow should be doing more sound effect, like BGM?
+
+And should add more user incitements? But how?
+
 ### Day 2
 
 5 days left.
