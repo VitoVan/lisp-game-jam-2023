@@ -3,6 +3,48 @@
 
 This is my development log for [Spring Lisp Game Jam 2023](https://itch.io/jam/spring-lisp-game-jam-2023), I started my work a bit late, but maybe I can finally make it.
 
+### Day 4
+
+3 days 3 hours left.
+
+Let's sort out today's work:
+
+1. BGM
+2. Random Kitty Location
+3. Fix Auto-move feature (should pause at the intersection)
+4. More user incitement
+
+#### day 4 update - 1
+
+Let's see what we have done:
+
+1. BGM, done, using one of GarageBand sound pack loop forever
+
+   it's good to know that all sound pack in GarageBand is free as freedom and free-charge to use anywhere
+
+2. Auto-move fixed
+
+What's left?
+
+1. Random Kitty Location
+2. More user incitement
+
+I found a poem by Edward Lear, it's weird and interesting: *The Owl and the Pussycat*
+
+Maybe I could use this in my game, slice it into small pieces, show one piece of it each round, print out all of it at the end.
+
+#### day 4 update -2
+
+I integrated Edward Lear's text into my game! As an user incitement, the parts of the poem will show up after the player finished a maze. I also added a finish page.
+
+![d4-poem-page](README.assets/d4-poem-page.png)![d4-finish-page](README.assets/d4-finish-page.png)
+
+#### day 4 update -2
+
+I manually picked some nice spots for the kitties, and randomly pick from the list for the kitties to appear.
+
+I think it's time to call it a day.
+
 ### Day 3
 
 4 days left, actually, it's 3 days 20 hours left.
@@ -26,9 +68,14 @@ But it's far more difficult.
 
 And the day can turn into night, the night can turn into day.
 
-I should call it a day, tomorrow should be doing more sound effect, like BGM?
+I should call it a day, tomorrow should be:
 
-And should add more user incitements? But how?
+- doing more sound effect, like BGM?
+
+- should add more user incitements? But how?
+- random kitty position
+
+Oh, I also added a `auto-move` feature, which will save the player some key presses by auto-moving ahead, but it's buggy, could move ahead to much, should be fixed tomorrow.
 
 ### Day 2
 
