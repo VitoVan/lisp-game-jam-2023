@@ -3,6 +3,105 @@
 
 This is my development log for [Spring Lisp Game Jam 2023](https://itch.io/jam/spring-lisp-game-jam-2023), I started my work a bit late, but maybe I can finally make it.
 
+### Day 5
+
+2 days left.
+
+It's about time to wrap it up. So today I should:
+
+- fix knowns bugs
+- publish binaries
+  - Linux
+  - macOS
+  - Windows
+  - Web
+- write documents
+
+As for tomorrow, maybe I will send it to Jack as the first player, if he said something and I still have time, maybe I will fix it and re-publish again.
+
+#### producing binaries
+
+1
+
+[CALM](https://github.com/VitoVan/calm/) is already capable of publishing binaries for Linux / Windows / macOS, albeit with a little higher OS requirements, like:
+
+- on Linux, GCC should >= 2.33
+- on macOS, only the most recent three version of macOS supported, the earliest one is Big Sur for now
+- on Windows, it should be Windows 10 and 11
+
+It might be enough for non-wizard users, but some BSD wizards won't be happy, so a Web version is a must-have. Of course, a document to show how to run from source is also needed.
+
+2
+
+Web version targets [JSCL](https://github.com/jscl-project/jscl/).
+
+It turns out JSCL has a poor support for `array`:
+
+https://github.com/jscl-project/jscl/issues/482
+
+https://github.com/jscl-project/jscl/issues/127
+
+But for this small game, `list` is more than enough, so I could rewrite `array` related stuff to `list`.
+
+3
+
+JSCL lacks of `equalp`, which is fine, I can compare manually. I hope one day I could close this issue:
+
+https://github.com/jscl-project/jscl/issues/479
+
+4
+
+Add touch screen support, since some user may use their phone to play this game (within a web browser).
+
+5
+
+SDL2_Mixer on the browser performs weirdly, sound glitches during canvas repainting, why?
+
+Maybe, threads?
+
+By default, I disabled pthreads with `-s USE_PTHREADS=0` , but this makes the canvas painting and audio playing in the same thread, so while painting, the audio will be blocked.
+
+No luck with thread enabled, maybe I didn't really enabled it, since my Cairo build was not built with pthread.
+
+I'm not gonna build Cairo with pthread and try it for now, since it also requires extra [HTTP header](https://web.dev/coop-coep/) to be working, it's [overburden](https://github.com/gzuidhof/coi-serviceworker) for Github pages.
+
+6
+
+it's the double `loop` inside my `draw-*` functions, they loop the maze 13x13 times. It causes the browser hang. 
+
+WTF?
+
+13 x 13 = 169 loop will hang? I even tried empty `(format t "hang?~%")` inside the loop, it still blocks the browser.
+
+7
+
+Ah, I don't have time to debug the WebAssembly multithreading thing, so I made a workaround:
+
+For all the audio in the browser, I call `new Audio()` to play it, like this in JSCL:
+
+```lisp
+#+jscl
+(defun play-audio (audio-url &key (loop-audio-p nil) (volume 1))
+  (format t "playing audio: ~A~%" audio-url)
+  (let* ((audio-object-cache
+           (cdr (assoc audio-url calm::*calm-state-loaded-audio* :test #'string=)))
+         (audio-object
+           (or audio-object-cache
+               ;; https://github.com/jscl-project/jscl/wiki/JSCL-and-manipulations-with-JS-objects
+               (#j:window:eval (concatenate 'string "new Audio('" audio-url "')"))
+               )))
+    (unless audio-object-cache
+      (push (cons audio-url audio-object) calm::*calm-state-loaded-audio*))
+    (when loop-audio-p
+      (setf (jscl::oget audio-object "loop") t))
+    (setf (jscl::oget audio-object "volume") volume)
+    ((jscl::oget audio-object "play"))))
+```
+
+And it worked. So be it.
+
+Life came in, I don't have too much time left, I must wrap it up and submit, today.
+
 ### Day 4
 
 3 days 3 hours left.
@@ -20,7 +119,7 @@ Let's see what we have done:
 
 1. BGM, done, using one of GarageBand sound pack loop forever
 
-   it's good to know that all sound pack in GarageBand is free as freedom and free-charge to use anywhere
+   it's good to know that all [sound pack in GarageBand is free as freedom and free-charge to use anywhere](https://support.apple.com/en-us/HT201808)
 
 2. Auto-move fixed
 
