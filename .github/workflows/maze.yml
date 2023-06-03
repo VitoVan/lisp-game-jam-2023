@@ -30,7 +30,7 @@ jobs:
           calm publish-web
           ls -lah .
           zip -r -9 ${APP_NAME}-web.zip ./web
-          cp *.zip ../../../../
+          cp *.zip ../
       - name: GH Release
         uses: softprops/action-gh-release@v0.1.14
         with:
