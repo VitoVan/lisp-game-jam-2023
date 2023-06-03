@@ -216,6 +216,7 @@
 (defparameter *already-meow-with-purring* nil)
 (defun meow-with-purr ()
   (unless *already-meow-with-purring*
+    #-jscl
     (c:volume-music 128)
     #-jscl
     (c:play-music "assets/meow-with-purr.ogg")

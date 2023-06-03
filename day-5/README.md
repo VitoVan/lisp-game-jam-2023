@@ -1,6 +1,6 @@
 # How to Run
 
-This project was built with [CALM](https://github.com/VitoVan/calm/), with `calm` command at your disposal, you could just `cd` to this directory, and execute the command `calm`, then you will see the application running.
+This project was built with [CALM](https://github.com/VitoVan/calm/releases/tag/test-calm-013-06), with `calm` command at your disposal, you could just `cd` to this directory, and execute the command `calm`, then you will see the application running.
 
 # How to Compile
 
