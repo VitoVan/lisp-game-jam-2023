@@ -47156,7 +47156,7 @@ var l4235=internals.QIList(l183,l182,l184,l3837,l181,l179,l180,l264,l298,l3831,l
 l830.fvalue(internals.pv,l4235);
 l818.value=internals.symbolValue(l813);
 var l4236=internals.intern('COMPILATION-NOTICE');
-var l4237=internals.make_lisp_string('built on 3 June 2023');
+var l4237=internals.make_lisp_string('built on 4 June 2023');
 l4236.fvalue=(function(){var FUNC=(function JSCL_USER_COMPILATIONNOTICE(values){internals.checkArgsAtMost(arguments.length-1,0);
 var v15941=this;
 return (function(){return l4237;
