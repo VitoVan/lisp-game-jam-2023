@@ -203,7 +203,9 @@
       (c:play-music "assets/meow.ogg")
       #+jscl
       (c:play-audio "assets/meow.ogg" :volume (/ volume 128))
-      )))
+      )
+    (setf *calm-redraw* t)
+    ))
 
 (defparameter *already-purring* nil)
 (defun purr ()
@@ -223,7 +225,8 @@
     (c:play-music "assets/meow-with-purr.ogg")
     #+jscl
     (c:play-audio "assets/meow-with-purr.ogg")
-    (setf *already-meow-with-purring* t)))
+    (setf *already-meow-with-purring* t)
+    (setf *calm-redraw* t)))
 
 (defparameter *walk-index* 0)
 (defun walk ()
@@ -777,11 +780,9 @@
     (auto-move)
     (unless
         (or *win-pause* *kitty-collected*)
-      (meow)
-      (setf *calm-redraw* t))
+      (meow))
     (when
         (maze-position-equalp *player-position* *kitty-position*)
-      (meow-with-purr)
-      (setf *calm-redraw* t))
+      (meow-with-purr))
     )
   )

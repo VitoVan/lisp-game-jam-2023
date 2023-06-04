@@ -89,7 +89,7 @@ jobs:
           export PATH=$PATH:$(pwd)/calm/
           export APP_ICON="$(pwd)/images/app.icns"
           export DMG_ICON="$(pwd)/images/dmg.icns"
-          export APP_VERSION=0.0.1
+          export APP_VERSION=0.0.2
           export APP_ID=com.vitovan.maze
           export APP_NAME=Maze
           calm publish
