@@ -14,6 +14,47 @@ https://vitovan.itch.io/maze
 
 This is my development log for [Spring Lisp Game Jam 2023](https://itch.io/jam/spring-lisp-game-jam-2023), I started my work a bit late, but maybe I can finally make it.
 
+### Day 6
+
+20 hours left, a huge bug was found in the Web version, fuck.
+
+The game will hang at the end of fourth maze. Why?
+
+```lisp
+Welcome to JSCL (version 25e0341 built on 18 May 2023)
+
+JSCL is a Common Lisp implementation on Javascript.
+For more information, visit the project page at GitHub.
+
+CL-USER> (let ((n 0) 
+...         (x (list 'a 'b 'c 'd 'e 'f 'g))) 
+...     (rotatef (nth (incf n) x) 
+...              (nth (incf n) x) 
+...              (nth (incf n) x)) 
+...     x) 
+ERROR: Function 'ROTATEF' undefined
+CL-USER>  
+```
+
+When it's the fourth maze, I will randomise the maze list and give out one again. In the randomisation function:
+
+```lisp
+;; https://rosettacode.org/wiki/Knuth_shuffle#Common_Lisp
+(defun nshuffle (sequence)
+  (loop for i from (length sequence) downto 2
+        do (rotatef (elt sequence (random i))
+                    (elt sequence (1- i))))
+  sequence)
+```
+
+I called `rotatef` which does not exist in [JSCL](https://github.com/jscl-project/jscl/issues/483).
+
+What do I do?
+
+Ah, ha! Delete this feature in Web version!
+
+This is the shortest path to the new working version.
+
 ### Day 5
 
 2 days left.
