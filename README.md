@@ -55,6 +55,12 @@ Ah, ha! Delete this feature in Web version!
 
 This is the shortest path to the new working version.
 
+#### Another giant BUG!!!!
+
+High CPU usage enven when idling!
+
+Fixing and publishing!
+
 ### Day 5
 
 2 days left.
