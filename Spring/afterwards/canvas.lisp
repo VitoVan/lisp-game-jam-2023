@@ -231,7 +231,8 @@
 (defparameter *walk-index* 0)
 (defun walk ()
   #-jscl
-  (c:play-wav (concatenate 'string "assets/walk-" (write-to-string *walk-index*) ".ogg"))
+  (if (< (c:playing) 8)
+      (c:play-wav (concatenate 'string "assets/walk-" (write-to-string *walk-index*) ".ogg")))
   #+jscl
   (c:play-audio (concatenate 'string "assets/walk-" (write-to-string *walk-index*) ".ogg"))
   (if (< *walk-index* 7)
@@ -301,7 +302,7 @@
       (incf *win*)
       (setf *win-pause* t))))
 
-(defun on-keydown (key)
+(defun on-keyup (key)
   (unless *bgm-started*
     #-jscl
     (c:play-wav "assets/bgm.ogg" :loops -1)
@@ -400,12 +401,12 @@
         (if (> abs-x abs-y)
             ;; go horizontally
             (if (> distance-x 0)
-                (on-keydown :scancode-right)
-                (on-keydown :scancode-left))
+                (on-keyup :scancode-right)
+                (on-keyup :scancode-left))
             ;; go vertically
             (if (> distance-y 0)
-                (on-keydown :scancode-down)
-                (on-keydown :scancode-up))
+                (on-keyup :scancode-down)
+                (on-keyup :scancode-up))
             ))))
   )
 
