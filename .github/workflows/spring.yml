@@ -25,9 +25,18 @@ jobs:
           tar xvf calm.tgz --directory=calm
           ls -lah calm
           export PATH=$PATH:$(pwd)/calm/
+          # we don't need ogg in wasm,
+          # since we are using web audio
+          rm assets/*.ogg
           export APP_NAME=Maze
-          # export REBUILD_WASM_P=yes
+          # we need to rebuild wasm,
+          # since we are using custom fonts
+          export REBUILD_WASM_P=yes
           calm publish-web
+          # restore audio files,
+          # copy them into web folder
+          git restore assets/*.ogg
+          cp -R assets ./web/assets
           ls -lah .
           zip -r -9 ${APP_NAME}-web.zip ./web
           cp *.zip ../../
@@ -89,7 +98,7 @@ jobs:
           export PATH=$PATH:$(pwd)/calm/
           export APP_ICON="$(pwd)/images/app.icns"
           export DMG_ICON="$(pwd)/images/dmg.icns"
-          export APP_VERSION=0.0.2
+          export APP_VERSION=0.0.3
           export APP_ID=com.vitovan.maze
           export APP_NAME=Maze
           calm publish
