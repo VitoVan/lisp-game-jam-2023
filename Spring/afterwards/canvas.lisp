@@ -231,8 +231,7 @@
 (defparameter *walk-index* 0)
 (defun walk ()
   #-jscl
-  (if (< (c:playing) 8)
-      (c:play-wav (concatenate 'string "assets/walk-" (write-to-string *walk-index*) ".ogg")))
+  (c:play-wav (concatenate 'string "assets/walk-" (write-to-string *walk-index*) ".ogg"))
   #+jscl
   (c:play-audio (concatenate 'string "assets/walk-" (write-to-string *walk-index*) ".ogg"))
   (if (< *walk-index* 7)
