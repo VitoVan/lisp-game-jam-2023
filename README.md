@@ -6,17 +6,11 @@ This repository contains the source code and devlogs for my Lisp Game Jam submis
 
 Time is flying, is flying.
 
-## Spring
+## Spring: The Maze and Lost Cat
 
-Submission Page:
+[![](https://img.shields.io/badge/play-on%20itch.io-ff2e51?logo=itch.io)](https://vitovan.itch.io/maze)
 
-https://itch.io/jam/spring-lisp-game-jam-2023/rate/2101077
-
-Game Page:
-
-https://vitovan.itch.io/maze
-
-Screenshots:
+The Owl and the Pussy-cat went to sea
 
 ![spring-1](Spring/screenshots/spring-1.png)
 ![spring-2](Spring/screenshots/spring-2.png)
